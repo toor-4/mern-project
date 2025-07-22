@@ -1,0 +1,24 @@
+{
+  "name": "mern-project",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/toor-4/mern-project#readme",
+  "bugs": {
+    "url": "https://github.com/toor-4/mern-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toor-4/mern-project.git"
+  },
+  "license": "ISC",
+  "author": "alfredo",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon ./backend/server"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
