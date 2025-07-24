@@ -1,23 +1,20 @@
 const express = require('express');
 const morgan = require('morgan');
 const dotenv = require('dotenv').config();
-
+const workoutRoute = require('./routes/workoutRoutes');
 const connectDB = require('./config/db');
-const app = express();
 
-const Workout = require('./models/workoutModel');
+const app = express();
 
 const port = process.env.PORT || 3600;
 
-// middleware
+// middlewares
 app.use(morgan('tiny'));
+app.use(express.json()); // allows to parse json in the body of a request
+app.use(express.urlencoded({ extended: false })); // allows to parse url encoded data
 
-app.get('/', async function (req, res) {
-  const workouts = await Workout.find();
-  console.log(workouts);
-  // console.log(req.method, req.url);
-  res.json({ message: 'Hello from Node.js' });
-});
+// setting up a route handler
+app.use('/api/workouts', workoutRoute);
 
 app.listen(port, () => {
   connectDB();

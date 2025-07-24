@@ -1,0 +1,39 @@
+# Get all workouts
+GET http://localhost:8500/api/workouts
+# Authorization: 
+Content-Type: application/json 
+Accept: application/json
+
+### # Create Single Workout
+# POST /api/workouts HTTP/1.1
+# Host: localhost:8500
+# Authorization: Bearer YOUR_VALID_TOKEN_HERE
+POST http://localhost:8500/api/workouts
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Test 2",
+  "reps": 555,
+  "load": 250
+}
+
+### Get Single Workout
+GET http://localhost:8500/api/workouts/6880f5984e57047dbba68b29
+
+
+### Update Workput
+PUT http://localhost:8500/api/workouts/6880f5984e57047dbba68b29
+Content-Type: application/json 
+Accept: application/json
+
+{
+  "title": "Test",
+  "reps": 111111
+}
+
+
+### Delete
+DELETE http://localhost:8500/api/workouts/68822a60638dade647a65af6
+Content-Type: application/json
+Accept: application/json
